@@ -1,0 +1,47 @@
+<ion-content light-gray-gradient>
+  <ion-grid>
+    <div top-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-img src="assets/images/logo.jpg"></ion-img>
+        <ion-text mat-list-item>
+          <h3 text-white>Design Your Dreams</h3>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div bottom-grid>
+    <ion-row>
+      <ion-col text-center>
+          <form flex-form>
+              <mat-form-field size-md color="accent" appearance="outline">
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="unique id">
+              </mat-form-field>
+            
+              <mat-form-field size-md color="accent" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Your secret" [type]="hide ? 'password' : 'text'">
+                  <button height-sm mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+              </mat-form-field>
+              
+              <mat-list>
+                  <mat-list-item>
+                      <a mat-raised-button init-btn style="width: 100%">Login</a>
+                      <mat-divider></mat-divider>
+                  </mat-list-item>
+                  <mat-list-item>
+                      <p text-center size-sm m-auto>Already have an account?</p>
+                  </mat-list-item>
+                  <mat-list-item>
+                      <a mat-raised-button color="warn" init-btn routerLink="/signup" style="width: 100%">Signup</a>
+                  </mat-list-item>
+              </mat-list>
+          </form>
+      </ion-col>
+    </ion-row>
+  </div>
+  </ion-grid>
+</ion-content>
