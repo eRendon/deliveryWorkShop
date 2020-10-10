@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Empleados
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content light-gray-gradient [fullscreen]="true">
+	<!--	<app-modal-add-user></app-modal-add-user>-->
+	<mat-list *ngFor="let customer of employees">
+		<mat-list-item>
+			<mat-card class="card">
+				<h3 matLine>Nombre: {{customer.name}} </h3>
+				<p matLine>Email: {{customer.email}} </p>
+				<p matLine class="demo-2">Edad: {{customer.age}} </p>
+				<p matLine class="demo-2">Identificación: {{customer.nit}} </p>
+			</mat-card>
+		</mat-list-item>
+	</mat-list>
+	<!--	<button mat-fab id="add-button" (click)="openDialog()" mat-raised-button init-btn style="width: 100%">Agregar Cliente</button>-->
 </ion-content>
+<button (click)="openDialog()" mat-fab color="primary" id="add-button" matTooltip="Add customer"><i class="material-icons" >group_add</i></button>

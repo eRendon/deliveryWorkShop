@@ -16,12 +16,13 @@
           <form flex-form>
               <mat-form-field size-md color="accent" appearance="outline">
                 <mat-label>User Name</mat-label>
-                <input matInput placeholder="unique id">
+                <input (input)="emailInput($event)" matInput placeholder="unique id">
               </mat-form-field>
             
               <mat-form-field size-md color="accent" appearance="outline">
                   <mat-label>Password</mat-label>
-                  <input matInput placeholder="Your secret" [type]="hide ? 'password' : 'text'">
+	              <input (input)="passwordInput($event)" matInput placeholder="Your secret"
+	                     [type]="hide ? 'password' : 'text'"/>
                   <button height-sm mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </button>
@@ -29,7 +30,7 @@
               
               <mat-list>
                   <mat-list-item>
-                      <a mat-raised-button init-btn style="width: 100%">Login</a>
+                      <a (click)="logIn()" mat-raised-button init-btn style="width: 100%">Login</a>
                       <mat-divider></mat-divider>
                   </mat-list-item>
                   <mat-list-item>
