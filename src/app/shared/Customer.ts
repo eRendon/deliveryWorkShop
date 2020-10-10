@@ -5,4 +5,6 @@ export interface Customer {
   email?: string;
   lastModifiedDate?: Date;
   createdDate?: Date;
+  credit?: number;
+  moneyPayment?: number;
 }

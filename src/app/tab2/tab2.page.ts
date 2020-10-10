@@ -43,7 +43,9 @@ export class Tab2Page implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(ModalAddUserComponent);
+    const dialogRef = this.dialog.open(ModalAddUserComponent, {
+      data: { client: false}
+    });
     dialogRef.afterClosed().subscribe((value: Customer) => {
       if (value.name) {
         console.log('Employees', value);

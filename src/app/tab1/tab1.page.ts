@@ -45,7 +45,9 @@ export class Tab1Page implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(ModalAddUserComponent);
+    const dialogRef = this.dialog.open(ModalAddUserComponent, {
+      data: { client: true}
+    });
     dialogRef.afterClosed().subscribe((value: Customer) => {
       if (value.name) {
         console.log('customer', value);

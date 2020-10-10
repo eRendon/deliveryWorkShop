@@ -22,6 +22,10 @@
 							<mat-label>Identificación</mat-label>
 							<input [(ngModel)]="customer.nit" type="number" matInput placeholder="unique id" [ngModelOptions]="{standalone: true}">
 						</mat-form-field>
+						<mat-form-field *ngIf="data.client" size-md color="accent" appearance="outline">
+							<mat-label>Crédito</mat-label>
+							<input [(ngModel)]="customer.credit" type="number" matInput placeholder="unique id" [ngModelOptions]="{standalone: true}">
+						</mat-form-field>
 						<mat-list>
 							<mat-list-item>
 								<a (click)="onNoClick()" mat-raised-button init-btn style="width: 100%">Agregar Cliente</a>

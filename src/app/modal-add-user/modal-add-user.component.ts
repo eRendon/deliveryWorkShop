@@ -3,8 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Customer } from '../shared/Customer';
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  client: boolean;
 }
 
 @Component({
